@@ -1,0 +1,47 @@
+int click = 0;
+int spacebar=0;
+void setup(){
+  size(500,500);
+  background(125);
+}
+
+void mousePressed()
+{
+  click +=1;
+  print(click+'\n');
+}
+
+void draw(){
+background(125);
+
+//I would make this so it only runs once per hit
+//I would create a cap at 50 for clicks and spaces
+
+if (key == ' '){
+  spacebar += 1;
+  key=0;
+  print(spacebar+'\n');}
+  
+//i would turn these lines into objects
+
+fill(0);
+rect(width/2-50,(height-110)-spacebar*5, 50,10);
+textSize(50);
+text(spacebar,width/2-100,100); 
+
+fill(255);
+rect(width/2+50,(height-120)-click*5, 30, 50, 18, 18, 0, 0);
+textSize(50);
+text(click,width/2,100);
+
+//I would draw some lines here to make it look like a track
+
+if (spacebar>=50) {
+  fill(255);
+  text("SPACEBAR WINS!!!",width/2-100,height/2);}
+if (click>=50) {
+  text("MOUSE WINS!!!",width/2,height/2);}
+  
+//I would create a variable to record the order of clicks and space hits for 
+//the instant replay
+}
